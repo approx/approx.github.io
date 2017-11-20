@@ -220,7 +220,7 @@ function StartLoad360(func) {
   });
 
   materialReception = new THREE.MeshBasicMaterial({
-    map: new THREE.TextureLoader().load('imgs/teste.jpg',function () {
+    map: new THREE.TextureLoader().load('imgs/teste.png',function () {
       materialtoLoad.loaded++;
       func((materialtoLoad.loaded*100)/materialtoLoad.toLoad);
       console.log('loading');
@@ -238,13 +238,13 @@ function StartLoad360(func) {
 function Initi() {
   SCENE.instance.EnableDeviceControls();
 
-  // var cozinhaObj = SCENE.instance.CreateSphere(500,60,60,materialCozinha);
-  // cozinhaObj.obj3D.scale.set(-1,1,1);
-  // cozinhaObj.obj3D.material.opacity=0;
-  //
-  // var producaoObj = SCENE.instance.CreateSphere(500,60,60,materialProduction);
-  // producaoObj.obj3D.scale.set(-1,1,1);
-  // producaoObj.obj3D.material.opacity=0;
+  var cozinhaObj = SCENE.instance.CreateSphere(500,60,60,materialCozinha);
+  cozinhaObj.obj3D.scale.set(-1,1,1);
+  cozinhaObj.obj3D.material.opacity=0;
+
+  var producaoObj = SCENE.instance.CreateSphere(500,60,60,materialProduction);
+  producaoObj.obj3D.scale.set(-1,1,1);
+  producaoObj.obj3D.material.opacity=0;
 
   var receptionObj = SCENE.instance.CreateSphere(500,60,60,materialReception);
   receptionObj.obj3D.scale.set(-1,1,1);
@@ -258,49 +258,49 @@ function Initi() {
 
   //console.log(sCord.ToVector3());
 
-  // var hudReceptionToCozinha = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),sCord.ToVector3(),function () {
-  //   console.log('reception to kitchen');
-  //   reception.fade(cozinha);
-  // },true);
-  //
-  // var liveMarketingCord =  new SphericalCordinate(250,90,500);
-  //
-  // var liveMarketing = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateTextHud('+liveMarketing'),liveMarketingCord.ToVector3(),function () {
-  //   liveMarketingCarousel.Show();
-  // },true);
-  // console.log(liveMarketing);
-  //
-  //
-  //
-  // var hudCozinhaToProducao = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),new THREE.Vector3(0,0,-3),function() {
-  //   console.log('fin');
-  //   cozinha.fade(producao);
-  // },true);
-  //
-  //
-  // var hudCozinhaToReception = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),new SphericalCordinate(0,90,500).ToVector3(),function () {
-  //   cozinha.fade(reception);
-  // },true);
-  //
-  //
-  // var hudProducaoToCozinha = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),new THREE.Vector3(-3,0,-1),function() {
-  //   console.log('fin');
-  //   producao.fade(cozinha);
-  // },true);
+  var hudReceptionToCozinha = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),sCord.ToVector3(),function () {
+    console.log('reception to kitchen');
+    reception.fade(cozinha);
+  },true);
+
+  var liveMarketingCord =  new SphericalCordinate(250,90,500);
+
+  var liveMarketing = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateTextHud('+liveMarketing'),liveMarketingCord.ToVector3(),function () {
+    liveMarketingCarousel.Show();
+  },true);
+  console.log(liveMarketing);
+
+
+
+  var hudCozinhaToProducao = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),new THREE.Vector3(0,0,-3),function() {
+    console.log('fin');
+    cozinha.fade(producao);
+  },true);
+
+
+  var hudCozinhaToReception = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),new SphericalCordinate(0,90,500).ToVector3(),function () {
+    cozinha.fade(reception);
+  },true);
+
+
+  var hudProducaoToCozinha = SCENE.instance.SetHudToWorldSpace(SCENE.instance.CreateImgHud('imgs/logo.png',50,50),new THREE.Vector3(-3,0,-1),function() {
+    console.log('fin');
+    producao.fade(cozinha);
+  },true);
 
 
   SCENE.instance.dia
 
-  // cozinha.addHud(hudCozinhaToProducao);
-  // cozinha.addHud(hudCozinhaToReception);
-  // cozinha.disableHud();
-  //
-  // producao.addHud(hudProducaoToCozinha);
-  // producao.addHud(liveMarketing);
-  // producao.disableHud();
-  //
-  // reception.addHud(hudReceptionToCozinha);
-  // reception.disableHud();
+  cozinha.addHud(hudCozinhaToProducao);
+  cozinha.addHud(hudCozinhaToReception);
+  cozinha.disableHud();
+
+  producao.addHud(hudProducaoToCozinha);
+  producao.addHud(liveMarketing);
+  producao.disableHud();
+
+  reception.addHud(hudReceptionToCozinha);
+  reception.disableHud();
 
 
   var fade = function recursive(from,to) {
