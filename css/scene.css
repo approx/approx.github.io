@@ -1,0 +1,267 @@
+/*
+  SCENE Library
+
+  Version:1.1
+
+  wraper around of Three.js library
+
+  created by Diego Matias de Oliveira
+*/
+
+#container, #hud{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top:0px;
+  left: 0px;
+}
+
+#container{
+  /*z-index: 10;*/
+}
+
+#hud{
+  z-index: 15;
+}
+
+
+body,html{
+  font-family: 'Titillium Web', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes icone {
+  from {transform: rotateY(0deg);}
+    to {transform: rotateY(180deg);}
+}
+
+.imgHud{
+  animation-iteration-count: infinite;
+  animation-name: icone;
+  animation-duration: 2s;
+  /*transform: translate(-50%,-50%) rotate(0deg);*/
+  z-index: 100;
+  cursor: pointer;
+}
+
+.grab{
+  cursor: -webkit-grab;
+}
+
+.eA { cursor: -webkit-grab; cursor:-moz-grab; }
+.eA:active { cursor: -webkit-grabbing; cursor:-moz-grabbing;}
+
+.grabbing{
+  cursor: -webkit-grabbing;
+}
+
+.textHud{
+  color: white;
+  font-size: 23px;
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.navBar{
+  position:absolute;
+  height: 52px;
+  top:0px;
+  left:0px;
+  right: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  transition: all 1s;
+}
+
+.navBar .room{
+  padding: 15px 30px;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navBar .room.active{
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.mobileBars{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 10;
+  font-size: 30px;
+  color: white;
+  padding: 15px 5px;
+}
+
+.mobileBars:hover{
+  cursor: pointer;
+}
+
+.show800-inline-block{
+    display: none!important;
+}
+
+.loading{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loading h1{
+  font-size: 50px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.loading a,.loading p{
+  opacity: 0;
+}
+
+.navBar .social{
+  padding: 15px 50px;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navBar .social a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin: 0px 20px;
+}
+
+.logo{
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img{
+  margin: 20px 10px;
+  width: 7%;
+  height: 100%;
+}
+
+.logo .margin{
+  width: 46.5%;
+  border-bottom: 1px solid rgba(226, 225, 225, 0.7);;
+}
+
+.navBar .social a:hover{
+  color: #00bcff;
+}
+
+.odin{
+  position: absolute;
+  width: 15%;
+}
+
+.Anim1{
+  bottom: 0px;
+  right: 0px;
+}
+
+.Anim2{
+  bottom: 0px;
+  left: 0px;
+}
+
+.navBar .room:hover,.navBar .room:focus{
+  background-color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+
+.arrowNav{
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  color: white;
+  font-size: 40px;
+  transition: all 1s;
+}
+
+@media screen and (max-width:1192px) {
+  .navBar .room{
+    padding: 10px 20px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .navBar .room.active{
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media screen and (max-width:800px) {
+  .navBar{
+    position:absolute;
+    right:-140px;
+    top:60px;
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .navBar .room{
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 18px;
+    width: 120px;
+    color: black;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .navBar .room.active{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(236, 55, 48);
+  }
+
+  .show800-inline-block{
+    display: inline-block!important;
+  }
+
+  .hide800{
+    display: none;
+  }
+
+  .loading h1{
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .logo img{
+    margin: 20px 10px;
+    width: 20%;
+    height: 100%;
+  }
+}

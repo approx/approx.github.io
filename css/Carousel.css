@@ -1,0 +1,109 @@
+/*html {
+    overflow-x: hidden;
+}*/
+
+[carousel]{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+[carousel] .carousel-container,[carousel] .carousel-itens{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-hide{
+  color: white;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.carousel-hide:hover{
+  cursor: pointer;
+}
+
+[carousel] .carousel-iten{
+  background-color: gray;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
+
+.carousel-nav-buttons a{
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.5s;
+}
+
+.carousel-nav-buttons a:hover{
+  color: #ec3730;
+}
+
+.carousel-nav-buttons a#left{
+  float: left;
+}
+
+.carousel-nav-buttons a#right{
+  float: right;
+}
+
+[carousel] .carousel-iten.active{
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
+}
+
+[carousel] .carousel-iten .carousel-title{
+  color: white;
+  font-size: 20px;
+  transition: all 0.5s;
+  font-weight: bold;
+}
+
+[carousel] .carousel-iten .carousel-title:hover{
+  color: #ec3730;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.zoomOut{
+  transform: scale(0.90);
+}
+
+.carousel-content .carousel-content-exit{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border: 1px white solid;
+  padding: 7px 10px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.carousel-content .carousel-content-exit:hover{
+  cursor: pointer;
+}
+
+.cursorOnHover:hover{
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}

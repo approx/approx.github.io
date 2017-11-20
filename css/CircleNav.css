@@ -1,0 +1,46 @@
+#CircleNavBar{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  /*background-color: green;*/
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.CircleNavIten{
+  /*background-color: blue;*/
+  position: absolute;
+  height: 50%;
+  width: 50%;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  transform-origin: 100% 100%;
+}
+
+.CircleIten{
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  bottom: -100%;
+  right: -100%;
+  /*background-color: red;*/
+}
+
+
+.CircleIten div,.CircleIten a{
+  position: absolute;
+  margin-top: 10px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;;
+}
+
+.CircleIten a:hover{
+  color: #ec3730!important;
+  font-weight: bold;
+}
